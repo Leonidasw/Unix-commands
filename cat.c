@@ -18,12 +18,14 @@ int main(int argc, char* argv[])
             else {
                 if (access(argv[i], F_OK) != 0) {
                     printf("%s is an inexistant file", argv[i]);
+                    return 1;
                 }
             }
         }
     }
     else {
         printf("not enough arguments");
+        return 1;
     };
     return 0;
 }
