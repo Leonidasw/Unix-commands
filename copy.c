@@ -36,6 +36,7 @@ int main(int argc, char* argv[])
         else {
             if (access(argv[1], F_OK) == 1) {
                 printf("%s is an inexistant file", argv[1]);
+                return 1;
             }
             else {
                 if (get_filename_ext(argv[1]) != 0) {
@@ -61,9 +62,11 @@ int main(int argc, char* argv[])
     }
     else if(argc > 2){
         printf("too many arguments");
+        return 1;
     }
     else {
         printf("too few arguments");
+        return 1;
     }
     
     return 0;
